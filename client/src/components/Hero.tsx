@@ -16,7 +16,7 @@ export default function Hero() {
           transition={{ delay: 0.1, duration: 0.6 }}
           className="text-[#64FFDA] font-mono mb-4"
         >
-          Welcome to
+          Welcome I'am
         </motion.p>
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-2xl md:text-4xl font-semibold text-[#8892B0] mb-8"
         >
-          MERN Stack & eCommerce Developer
+          MERN Stack & E-commerce Developer
         </motion.h2>
 
         <motion.p

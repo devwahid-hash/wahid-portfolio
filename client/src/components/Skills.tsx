@@ -12,6 +12,21 @@ const skills = [
   { icon: SiGit, name: "Git", level: 85 }
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
+
 export default function Skills() {
   return (
     <section className="py-20 px-4 bg-[#112240]">
@@ -25,19 +40,31 @@ export default function Skills() {
           Skills & Expertise
         </motion.h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8"
+        >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="flex flex-col items-center p-6 bg-[#0A192F] rounded-lg hover:bg-[#233554] transition-colors duration-300"
+              variants={item}
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 10px 30px -15px rgba(2,12,27,0.7)"
+              }}
+              className="flex flex-col items-center p-6 bg-[#0A192F] rounded-lg border border-[#233554] hover:border-[#64FFDA] transition-all duration-300 cursor-pointer"
             >
-              <skill.icon className="w-12 h-12 text-[#64FFDA] mb-4" />
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.5 }}
+              >
+                <skill.icon className="w-12 h-12 text-[#64FFDA] mb-4" />
+              </motion.div>
               <h3 className="text-[#CCD6F6] font-semibold mb-2">{skill.name}</h3>
-              <div className="w-full bg-[#233554] h-2 rounded-full">
+              <div className="w-full bg-[#233554] h-2 rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${skill.level}%` }}
@@ -46,9 +73,17 @@ export default function Skills() {
                   className="h-full bg-[#64FFDA] rounded-full"
                 />
               </div>
+              <motion.span 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 1.5 }}
+                className="mt-2 text-[#8892B0] text-sm"
+              >
+                {skill.level}%
+              </motion.span>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

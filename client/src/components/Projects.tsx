@@ -1,27 +1,23 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { SiReact, SiNodedotjs, SiMongodb, SiExpress } from "react-icons/si";
 
 const projects = [
   {
-    title: "Project Management Dashboard",
-    description: "A comprehensive project management solution with real-time updates and team collaboration features.",
-    image: "https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8",
+    title: "Project 1",
+    description: "Loading custom project...",
     tech: ["React", "Node.js", "MongoDB", "Express.js"],
     link: "#"
   },
   {
-    title: "E-commerce Platform",
-    description: "Full-featured e-commerce platform with inventory management and payment processing.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    title: "Project 2",
+    description: "Loading custom project...",
+    tech: ["React", "Node.js", "MongoDB", "Express.js"],
     link: "#"
   },
   {
-    title: "Social Media Analytics",
-    description: "Analytics dashboard for social media metrics with data visualization.",
-    image: "https://images.unsplash.com/photo-1664580618281-fbc47baf6edf",
-    tech: ["React", "Express.js", "MongoDB", "D3.js"],
+    title: "Project 3",
+    description: "Loading custom project...",
+    tech: ["React", "Node.js", "MongoDB", "Express.js"],
     link: "#"
   }
 ];
@@ -39,7 +35,7 @@ export default function Projects() {
           Featured Projects
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -47,28 +43,33 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
+              whileHover={{ y: -10 }}
+              className="transform transition-all duration-300"
             >
-              <Card className="overflow-hidden bg-[#112240] border-[#233554] h-full">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                />
+              <Card className="overflow-hidden bg-[#112240] border-[#233554] h-full hover:border-[#64FFDA] transition-colors duration-300">
+                <div className="aspect-w-16 aspect-h-9 relative overflow-hidden">
+                  <div className="w-full h-48 bg-[#233554] animate-pulse" />
+                </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-[#CCD6F6] mb-3">
+                  <motion.h3 
+                    className="text-xl font-semibold text-[#CCD6F6] mb-3 group-hover:text-[#64FFDA] transition-colors"
+                    whileHover={{ x: 10 }}
+                  >
                     {project.title}
-                  </h3>
-                  <p className="text-[#8892B0] mb-4">
+                  </motion.h3>
+                  <p className="text-[#8892B0] mb-4 leading-relaxed">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
-                      <span 
+                      <motion.span 
                         key={i}
-                        className="text-[#64FFDA] text-sm px-3 py-1 bg-[#64FFDA]/10 rounded"
+                        whileHover={{ scale: 1.1 }}
+                        className="text-[#64FFDA] text-sm px-3 py-1 bg-[#64FFDA]/10 rounded-full
+                                 hover:bg-[#64FFDA]/20 transition-colors duration-300"
                       >
                         {tech}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 </CardContent>
