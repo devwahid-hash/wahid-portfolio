@@ -5,21 +5,21 @@ const projects = [
   {
     title: "Fasco Fashion E-commerce",
     description: "A modern e-commerce platform for fashion retail featuring a sleek user interface, ultimate sale collections, and brand showcase. Built with React and modern web technologies.",
-    image: "../../../attached_assets/webdesign 3.png",
+    image: "/assets/webdesign 3.png",
     tech: ["React", "Node.js", "MongoDB", "Express.js"],
     link: "#"
   },
   {
     title: "Minimalist Product Catalog",
     description: "A clean and modern product catalog with advanced filtering capabilities, size selection, and mobile-responsive design. Implements dark mode and intuitive navigation.",
-    image: "../../../attached_assets/webdesign 2.png",
+    image: "/assets/webdesign 2.png",
     tech: ["React", "Tailwind CSS", "Redux", "Node.js"],
     link: "#"
   },
   {
     title: "Rivo Fashion Store",
     description: "An elegant fashion e-commerce website with a focus on user experience, featuring product collections, exclusive offers, and customer feedback integration.",
-    image: "../../../attached_assets/web design.png",
+    image: "/assets/web design.png",
     tech: ["React", "Express.js", "MongoDB", "Stripe"],
     link: "#"
   }
