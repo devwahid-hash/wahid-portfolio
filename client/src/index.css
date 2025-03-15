@@ -25,16 +25,16 @@
   }
 
   .light {
-    --background: 210 40% 98%;
+    --background: 0 0% 100%;
     --foreground: 222 47% 11%;
 
-    --primary: 210 40% 98%;
+    --primary: 210 38% 95%;
     --primary-foreground: 222 47% 11%;
 
     --accent: 171 68% 41%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
+    --card: 210 38% 95%;
     --card-foreground: 222 47% 11%;
 
     --muted: 210 40% 96.1%;

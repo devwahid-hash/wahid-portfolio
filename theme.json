@@ -2,7 +2,7 @@
   "variant": "professional",
   "primary": {
     "dark": "#0A192F",
-    "light": "#F8FAFC"
+    "light": "#FFFFFF"
   },
   "appearance": "dark",
   "radius": 0.5
