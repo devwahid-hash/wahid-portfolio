@@ -32,3 +32,4 @@ A modern portfolio website built with React, Express, and cutting-edge web techn
 - `/client` - Frontend React application
 - `/server` - Backend Express server
 - `/shared` - Shared types and schemas
+# portfolio-website
